@@ -36,19 +36,20 @@
 .nav {
   align-items: center;
   backdrop-filter: blur(20px);
-  background: rgba(250, 248, 242, 0.72);
+  background: rgba(250, 248, 242, 0.86);
   border: 1px solid rgba(41, 38, 32, 0.08);
   border-radius: 999px;
+  box-shadow: 0 16px 46px rgba(45, 41, 32, 0.08);
   display: flex;
   justify-content: space-between;
   left: 50%;
   max-width: min(1080px, calc(100% - 32px));
   padding: 10px 12px 10px 18px;
-  position: sticky;
+  position: fixed;
   top: 18px;
   transform: translateX(-50%);
   width: 100%;
-  z-index: 10;
+  z-index: 15;
 }
 
 .wordmark {
@@ -91,6 +92,7 @@
   margin: 0 auto;
   max-width: 1120px;
   padding-inline: 24px;
+  scroll-margin-top: 120px;
 }
 
 .hero-section {
@@ -99,7 +101,7 @@
   gap: 56px;
   grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
   min-height: 88svh;
-  padding-top: 96px;
+  padding-top: 132px;
 }
 
 .hero-copy {
@@ -727,7 +729,7 @@ blockquote {
   .hero-section {
     gap: 28px;
     min-height: auto;
-    padding-top: 116px;
+    padding-top: 130px;
   }
 
   .hero-card {
@@ -756,7 +758,7 @@ blockquote {
   }
 
   .hero-section {
-    padding-top: 128px;
+    padding-top: 138px;
   }
 
   .hero-section h1 {
@@ -850,9 +852,9 @@ blockquote {
 @media (max-width: 560px) {
   .nav {
     align-items: flex-start;
-    border-radius: 24px;
-    flex-direction: column;
-    gap: 10px;
+    border-radius: 28px;
+    flex-direction: row;
+    gap: 8px;
     max-width: calc(100% - 24px);
     padding: 12px;
   }
@@ -861,6 +863,7 @@ blockquote {
     display: grid;
     gap: 6px;
     grid-template-columns: repeat(2, 1fr);
+    max-width: 230px;
     width: 100%;
   }
 
@@ -876,10 +879,11 @@ blockquote {
   .section,
   .contact-section {
     padding-inline: 16px;
+    scroll-margin-top: 150px;
   }
 
   .hero-section {
-    padding-top: 154px;
+    padding-top: 168px;
   }
 
   .hero-actions a,
@@ -925,6 +929,23 @@ blockquote {
 
   .nav {
     max-width: calc(100% - 16px);
+    padding: 10px;
+  }
+
+  .wordmark {
+    height: 36px;
+    min-width: 36px;
+    width: 36px;
+  }
+
+  .nav-links {
+    max-width: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    min-height: 38px;
+    padding: 8px 7px;
   }
 
   .hero-section h1 {

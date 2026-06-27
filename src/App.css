@@ -3,6 +3,19 @@
   isolation: isolate;
 }
 
+.portfolio-shell::after {
+  background-image:
+    linear-gradient(rgba(30, 33, 29, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 33, 29, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  content: '';
+  inset: 0;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 72%);
+  pointer-events: none;
+  position: fixed;
+  z-index: -1;
+}
+
 .skip-link {
   background: var(--ink);
   border-radius: 999px;
@@ -93,6 +106,10 @@
   max-width: 1120px;
   padding-inline: 24px;
   scroll-margin-top: 120px;
+}
+
+.section + .section {
+  border-top: 1px solid rgba(30, 33, 29, 0.07);
 }
 
 .hero-section {
@@ -212,6 +229,47 @@ blockquote {
   display: block;
   font-size: 0.82rem;
   margin-top: 2px;
+}
+
+.value-section {
+  padding-top: 42px;
+}
+
+.value-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 34px;
+}
+
+.value-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4)),
+    color-mix(in srgb, var(--active-accent) 7%, transparent);
+  border: 1px solid rgba(30, 33, 29, 0.08);
+  border-radius: 26px;
+  min-height: 210px;
+  padding: 22px;
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.value-card:hover {
+  border-color: color-mix(in srgb, var(--active-accent) 45%, rgba(30, 33, 29, 0.08));
+  box-shadow: 0 18px 48px rgba(45, 41, 32, 0.08);
+  transform: translateY(-4px);
+}
+
+.value-card h3 {
+  color: var(--ink);
+  font-size: 1.12rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+
+.value-card p {
+  color: var(--muted);
+  margin: 0;
 }
 
 .hero-card {
@@ -503,7 +561,7 @@ blockquote {
 .case-meta {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 28px;
 }
 
@@ -650,6 +708,45 @@ blockquote {
   padding: 24px;
 }
 
+.checklist-section {
+  padding-top: 64px;
+}
+
+.checklist-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 32px;
+}
+
+.check-item {
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(30, 33, 29, 0.08);
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.check-item span {
+  align-items: center;
+  background: var(--ink);
+  border-radius: 50%;
+  color: #fffdf7;
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 900;
+  height: 24px;
+  justify-content: center;
+  margin-bottom: 16px;
+  width: 24px;
+}
+
+.check-item p {
+  color: var(--ink);
+  font-size: 0.94rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
 .panel-header {
   align-items: center;
   display: flex;
@@ -718,7 +815,9 @@ blockquote {
   .split-section,
   .profile-grid,
   .skill-grid,
-  .case-study-grid {
+  .case-study-grid,
+  .value-grid,
+  .checklist-grid {
     grid-template-columns: 1fr;
   }
 
@@ -812,9 +911,15 @@ blockquote {
   .skill-card,
   .project-tab,
   .process-card,
-  .interaction-panel {
+  .interaction-panel,
+  .value-card,
+  .check-item {
     border-radius: 20px;
     padding: 18px;
+  }
+
+  .value-card {
+    min-height: auto;
   }
 
   .project-preview {

@@ -23,6 +23,7 @@ const projects = [
     detail:
       'Built a browser-based creative tool with real-time hand tracking, 3D rendering, a live camera overlay, brush controls, undo/clear actions, and view-aligned drawing so strokes follow the current camera perspective instead of fixed world axes.',
     stack: ['React', 'TypeScript', 'Vite', 'MediaPipe', 'Three.js'],
+    uxFocus: 'Feedback, spatial interaction, learnability',
     role: 'Interaction design, frontend build, camera UX',
     duration: 'Prototype sprint',
     problem:
@@ -46,6 +47,7 @@ const projects = [
     detail:
       'Implemented an Express API with BullMQ workers for planner, video, publisher, and analytics jobs. The pipeline connects Perplexity for scripts, OpusClip for video clipping, YouTube/Instagram publishing, PostgreSQL records, Redis queues, and a human approval gate before publishing.',
     stack: ['Node.js', 'Express', 'BullMQ', 'PostgreSQL', 'Redis', 'YouTube API'],
+    uxFocus: 'Workflow clarity, status visibility, human control',
     role: 'Backend architecture, workflow design, API structure',
     duration: 'Automation build',
     problem:
@@ -68,6 +70,7 @@ const projects = [
     detail:
       'Designed a local-first single-page experience with a multi-step intake survey, eight therapeutic plan types, adaptive journey copy, XP, badges, streaks, daily quests, a win jar, journal prompts, box breathing, and React islands for books, films, plan cards, and quote rotation.',
     stack: ['Vite', 'React Islands', 'localStorage', 'Vanilla JS', 'Express Stub'],
+    uxFocus: 'Privacy, emotional safety, habit formation',
     role: 'Product UX, emotional design, content structure',
     duration: 'Personal product build',
     problem:
@@ -91,6 +94,7 @@ const projects = [
     detail:
       'Built a dark aurora React experience with marquee intro text, magnetic CTA, bento memory cards, 3D tilt, swipeable love cards, this-or-that interactions, poppable fortune hearts, vibe selection, an SVG love meter, a runaway No button, growing Yes action, confetti, and a revealable love letter.',
     stack: ['React', 'TypeScript', 'Framer Motion', 'Canvas Confetti', 'Vite'],
+    uxFocus: 'Narrative flow, delight, progressive reveal',
     role: 'Creative direction, motion UX, frontend build',
     duration: 'Interactive story build',
     problem:
@@ -114,6 +118,7 @@ const projects = [
     detail:
       'Created a Python service with Telethon that listens for incoming private messages, filters bots and blocked users, respects allow lists and cooldowns, replies from keyword/regex rules first, and falls back to Gemini or OpenAI-compatible AI when configured. It also includes Docker and background-run options.',
     stack: ['Python', 'Telethon', 'Gemini', 'Docker', 'MTProto'],
+    uxFocus: 'Safety guardrails, automation control, trust',
     role: 'Automation design, safety logic, service setup',
     duration: 'Utility service build',
     problem:
@@ -139,6 +144,25 @@ const proofPoints = [
   { value: '5', label: 'Selected projects' },
   { value: '3', label: 'Live demos' },
   { value: 'UI + code', label: 'Main strength' },
+]
+
+const valuePillars = [
+  {
+    title: 'Human-centered flows',
+    text: 'I look at what the user needs to understand, feel, and do before choosing the interface pattern.',
+  },
+  {
+    title: 'Prototype-first design',
+    text: 'I use working prototypes to test motion, feedback, states, and edge cases earlier than static screens can.',
+  },
+  {
+    title: 'AI-aware builder',
+    text: 'I study AI tools and new technology, then connect them with basic academic foundations from SP.',
+  },
+  {
+    title: 'Practical delivery',
+    text: 'I care about deployed links, readable systems, responsive behavior, and interfaces that can be handed off.',
+  },
 ]
 
 const profileHighlights = [
@@ -169,6 +193,14 @@ const processSteps = [
     title: 'Polish for trust',
     text: 'I refine hierarchy, copy, spacing, states, and accessibility so the product feels calm, intentional, and usable.',
   },
+]
+
+const uxChecklist = [
+  'Clear first impression and role positioning',
+  'Visible project outcomes and live links',
+  'Problem, approach, and outcome for each case study',
+  'Keyboard focus, reduced motion, and mobile-friendly controls',
+  'Interaction details that support meaning rather than decoration',
 ]
 
 const skillGroups = [
@@ -224,12 +256,12 @@ function App() {
         <div className="hero-copy">
           <p className="eyebrow">{profile.location} based UI/UX portfolio</p>
           <h1>
-            Designing calm digital experiences with interactive, modern details.
+            Building calm interfaces for people, prototypes, and AI-era tools.
           </h1>
           <p className="hero-bio">
             {profile.name} is an {profile.title.toLowerCase()} exploring the
-            space between clean visual systems, interactive prototypes,
-            automation ideas, and small moments of motion.
+            space between clean visual systems, interactive prototypes, AI
+            tools, automation ideas, and small moments of motion.
           </p>
           <blockquote>{profile.bio}</blockquote>
           <div className="hero-actions">
@@ -275,6 +307,27 @@ function App() {
             </div>
           </div>
         </aside>
+      </section>
+
+      <section className="section value-section" aria-labelledby="value-title">
+        <div className="section-heading">
+          <p className="eyebrow">Portfolio Value</p>
+          <h2 id="value-title">More than visuals: flow, clarity, trust, and delivery.</h2>
+          <p>
+            I am shaping this portfolio around multiple UI/UX qualities:
+            usability, accessibility, responsiveness, emotional tone, system
+            thinking, and real deployable work.
+          </p>
+        </div>
+
+        <div className="value-grid">
+          {valuePillars.map((pillar) => (
+            <article className="value-card" key={pillar.title}>
+              <h3>{pillar.title}</h3>
+              <p>{pillar.text}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section about-section" id="about">
@@ -367,6 +420,10 @@ function App() {
               <div>
                 <span>Timeline</span>
                 <strong>{activeProject.duration}</strong>
+              </div>
+              <div>
+                <span>UX focus</span>
+                <strong>{activeProject.uxFocus}</strong>
               </div>
             </div>
             <div className="case-study-grid">
@@ -468,6 +525,21 @@ function App() {
             This small control changes the visual rhythm of the card, showing
             how simple interaction can make a portfolio feel more personal.
           </p>
+        </div>
+      </section>
+
+      <section className="section checklist-section">
+        <div className="section-heading">
+          <p className="eyebrow">Quality Checklist</p>
+          <h2>What I improved for real-world portfolio standards.</h2>
+        </div>
+        <div className="checklist-grid">
+          {uxChecklist.map((item) => (
+            <div className="check-item" key={item}>
+              <span aria-hidden="true">✓</span>
+              <p>{item}</p>
+            </div>
+          ))}
         </div>
       </section>
 

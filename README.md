@@ -9,10 +9,12 @@ Sitt's portfolio positions him as an aspiring UI/UX designer who learns by build
 ## UX structure
 
 - Clear hero positioning with proof points and contact CTA
+- Portfolio value section covering human-centered flows, prototype-first design, AI awareness, and practical delivery
 - About section focused on design identity, builder mindset, and project range
-- Case-study format for each project: role, timeline, problem, approach, outcome, tools, and insight
+- Case-study format for each project: role, timeline, UX focus, problem, approach, outcome, tools, and insight
 - Accessible interaction states, visible focus styles, skip link, responsive layout, and reduced-motion support
 - Live demo badges and direct project links where public deployments exist
+- Quality checklist section to show improvements across positioning, outcomes, accessibility, responsiveness, and meaningful motion
 
 ## Featured work
 
